@@ -1,2 +1,30 @@
-import"./assets/modulepreload-polyfill-3cfb730f.js";/* empty css                      */import{f,i}from"./assets/vendor-77e16229.js";const a=document.querySelector("button"),h=document.querySelector("#dateTime-picker");let s,o;f(h,{enableTime:!0,time_24hr:!0,defaultDate:new Date,minuteIncrement:1,onClose(e){s=e[0],s<new Date?(i.warning({position:"topCenter",title:"Warning",message:"Please choose a date in the future!"}),c()):y()}});function c(){a.disabled=!0}c();function y(){a.disabled=!1,a.addEventListener("click",g)}function g(){c(),h.disabled=!0,o&&clearInterval(o),o=setInterval(function(){const e=new Date().getTime(),n=s.getTime()-e;n<=0?(clearInterval(o),m(0),y(),i.success({title:"Success",message:"Countdown finished!",position:"topCenter"})):m(n)},1e3)}function m(e){const{days:n,hours:u,minutes:d,seconds:l}=C(e);function t(r){return String(r).padStart(2,"0")}document.querySelector("[data-days]").textContent=t(n),document.querySelector("[data-hours]").textContent=t(u),document.querySelector("[data-minutes]").textContent=t(d),document.querySelector("[data-seconds]").textContent=t(l)}function C(e){const t=Math.floor(e/864e5),r=Math.floor(e%864e5/36e5),p=Math.floor(e%864e5%36e5/6e4),S=Math.floor(e%864e5%36e5%6e4/1e3);return{days:t,hours:r,minutes:p,seconds:S}}console.log(i);console.log(f);
+import{S as m,i as l}from"./assets/vendor-3fe00192.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const a of t.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&s(a)}).observe(document,{childList:!0,subtree:!0});function i(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(e){if(e.ep)return;e.ep=!0;const t=i(e);fetch(e.href,t)}})();function p(o){const r=document.querySelector(".gallery"),i=o.map(({webformatURL:e,largeImageURL:t,tags:a,likes:u,views:d,comments:h,downloads:f})=>`
+  
+        <div class="gallery-card">
+            <li class="gallery_items">
+                <a href="${t}">
+                <img src="${e}" alt="${a}" class="gallery-img"></a>
+                <div class="card-text-div">
+                    <ul class="card-text-list">
+                        <li class="card-text">
+                            <h2>Likes</h2>
+                            <p>${u}</p>
+                        </li>
+                        <li class="card-text">
+                            <h2>Views</h2>
+                            <p>${d}</p>
+                        </li>
+                        <li class="card-text">
+                            <h2>Comments</h2>
+                            <p>${h}</p>
+                        </li>
+                        <li class="card-text">
+                            <h2>Downloads</h2>
+                            <p>${f}</p>
+                        </li>
+                    </ul>
+                </div>
+                
+            </li>
+        </div>`).join("");r.insertAdjacentHTML("afterbegin",i),new m(".gallery a",{captionsData:"alt",captionDelay:250,captionPosition:"bottom",widthRatio:.9,heightRatio:.8}).refresh()}function y(o){const r="43230635-158e2f6795128fbec19d81d21",i="https://pixabay.com/api/",s=new URLSearchParams({key:r,q:o,image_type:"photo",orientation:"horizontal",safesearch:!0});fetch(`${i}?${s}`).then(e=>{if(!e.ok)throw new Error(e.statusText);return e.json()}).then(e=>{e.total||l.error({title:"Error",position:"topRight",message:"Sorry, there are no images matching your search query. Please try again!"}),p(e.hits)}).catch(e=>{l.error({title:"Error",position:"topRight",message:"Oops! Something went wrong!"})}).finally(()=>loader.hidden=!0)}const n=document.querySelector(".search-form"),g=document.querySelector(".gallery"),c=document.querySelector(".loader");n.addEventListener("submit",L);c.hidden=!0;function L(o){o.preventDefault(),g.innerHTML="",c.hidden=!1;const{searchRequest:r}=o.currentTarget.elements;let i=r.value;y(i),n.reset()}
 //# sourceMappingURL=commonHelpers.js.map

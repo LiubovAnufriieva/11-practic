@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,18 +12,30 @@
       rel="stylesheet"
     />
 
-    <title>goit-js-hw-10</title>
+    <title>11-practic</title>
     
-    <link rel="stylesheet" href="/11-practic/assets/styles-498a747b.css">
+    <script type="module" crossorigin src="/11-practic/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/11-practic/assets/vendor-3fe00192.js">
+    <link rel="stylesheet" href="/11-practic/assets/vendor-4b066c51.css">
+    <link rel="stylesheet" href="/11-practic/assets/index-e9b02f49.css">
   </head>
   <body>
-    <nav class="nav-main">
-      <ul class="list-main">
-        <li><a class="link-main" href="./1-timer.html"> TIMER </a></li>
-        <li><a class="link-main"  href="./2-snackbar.html">SNACKBAR</a></li>
-      </ul>
-    </nav>
-
+    <div class="container">
+      <form class="search-form">
+        <input
+          type="text"
+          name="searchRequest"
+          placeholder="Search images..."
+          autofocus
+        />
+        <button type="search" class="search-btn">Search</button>
+      </form>
+    </div>
+    <div id="loader" class="loader is-hidden"></div>
+    <div class="gallery container">
+      <ul class="gallery-list"></ul>
+    </div>
     
+  </body>
   </body>
 </html>
