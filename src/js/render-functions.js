@@ -1,5 +1,4 @@
 import SimpleLightbox from "simplelightbox";
-
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 export function createGalleryMarkup(arr) {
@@ -35,6 +34,7 @@ export function createGalleryMarkup(arr) {
         </div>`).join("");
 
     galleryList.insertAdjacentHTML('afterbegin', markup);
+
     let gallery = new SimpleLightbox('.gallery a',
         {
             captionsData: 'alt',
