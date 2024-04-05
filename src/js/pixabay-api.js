@@ -5,7 +5,7 @@ import { createGalleryMarkup } from './render-functions';
 
 export default function onSearch(searchQuery) {
   const KEY_API = '43230635-158e2f6795128fbec19d81d21';
-  const BASE_URL = 'https://pixabay.com/api/';
+  const URL = 'https://pixabay.com/api/';
   const searchParams = new URLSearchParams({
     key: KEY_API,
     q: searchQuery,
@@ -14,7 +14,7 @@ export default function onSearch(searchQuery) {
     safesearch: true,
   });
 
-  fetch(`${BASE_URL}?${searchParams}`)
+  fetch(`${URL}?${searchParams}`)
     .then(response => {
       if (!response.ok) {
         throw new Error(response.statusText);
