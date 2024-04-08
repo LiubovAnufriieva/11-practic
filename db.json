@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "title": "Помити посуд",
+      "id": "2",
+      "completed": false
+    },
+    {
+      "title": "Винести сміття",
+      "id": "3",
+      "completed": false
+    },
+    {
+      "id": "8199",
+      "title": "Купити шоколад",
+      "completed": false
+    },
+    {
+      "id": "0ea9",
+      "title": "Прання",
+      "completed": false
+    }
+  ]
+}

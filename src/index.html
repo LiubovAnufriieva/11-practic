@@ -11,22 +11,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
 
-  <title>11-practic</title>
-  <link rel="stylesheet" href="./css/styles.css" />
+  <title>TODOS</title>
+  
 </head>
 
 <body>
-  <div class="container">
-    <form class="search-form">
-      <input type="text" name="searchRequest" placeholder="Search images..." autofocus />
-      <button type="search" class="search-btn">Search</button>
-    </form>
+  <div id="app">
+    <div class="wrapper">
+        <h1>Справи</h1>
+        <br/>
+
+        <form class="todo__form">
+          <input type="text" name="todo" placeholder="Додати справу">
+        </form>
+        
+        <ul class="list"></ul>
+      </div>
+    </div>
   </div>
-  <div class="loader" id="loader" ></div>
-  <div class="gallery container">
-    <ul class="gallery-list"></ul>
-  </div>
-  <script type="module" src="./main.js"></script>
+  <script type="module" src="/main.js"></script>
 </body>
 </body>
 
