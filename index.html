@@ -11,24 +11,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
 
-  <title>11-practic</title>
+  <title>TODOS</title>
   
-  <script type="module" crossorigin src="/11-practic/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/11-practic/assets/vendor-8c59ed88.js">
-  <link rel="stylesheet" href="/11-practic/assets/vendor-1cd1f9d9.css">
-  <link rel="stylesheet" href="/11-practic/assets/index-074745bc.css">
+  <script type="module" crossorigin src="/TODOS/commonHelpers.js"></script>
+  <link rel="stylesheet" href="/TODOS/assets/index-74b6044a.css">
 </head>
 
 <body>
-  <div class="container">
-    <form class="search-form">
-      <input type="text" name="searchRequest" placeholder="Search images..." autofocus />
-      <button type="search" class="search-btn">Search</button>
-    </form>
-  </div>
-  <div class="loader" id="loader" ></div>
-  <div class="gallery container">
-    <ul class="gallery-list"></ul>
+  <div id="app">
+    <div class="wrapper">
+        <h1>Справи</h1>
+        <br/>
+
+        <form class="todo__form">
+          <input type="text" name="todo" placeholder="Додати справу">
+        </form>
+        
+        <ul class="list"></ul>
+      </div>
+    </div>
   </div>
   
 </body>
