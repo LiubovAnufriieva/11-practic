@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -11,32 +11,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
 
-  <title>TODOS</title>
+  <title>AXIOS</title>
   
-  <script type="module" crossorigin src="/TODOS/commonHelpers2.js"></script>
+  <script type="module" crossorigin src="/TODOS/commonHelpers.js"></script>
   <link rel="modulepreload" crossorigin href="/TODOS/assets/styles-d0c7eb22.js">
   <link rel="stylesheet" href="/TODOS/assets/styles-4c9e07da.css">
 </head>
 
 <body>
   <div id="app">
-    <div class="wrapper">
-        <h1>Справи</h1>
-        <br/>
 
-        <form class="todo__form">
-          <input type="text" name="todo" placeholder="Додати справу">
-        </form>
-        
-        <ul class="list"></ul>
-      </div>
+    <h1>AXIOS</h1>
+    <br />
+
+    <div class="form-wrapper">
+      <form action="submit" class="js-search">
+        <div class="js-form-container">
+          <input type="text" class="input-country" name="country" placeholder="Додати країну" />
+        </div>
+        <button class="search-btn">SEARCH</button>
+      </form>
+      <button class="js-add">ADD COUNTRY</button>
+      <ul class="js-list">
+       
+      </ul>
     </div>
+
   </div>
-
-
-  <h2><a href="./12module.html" class="task">AXIOS</a></h2>
   
-</body>
+
 </body>
 
 </html>
