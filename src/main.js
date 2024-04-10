@@ -1,6 +1,6 @@
 import "./css/styles.css"
 
-const BASE_URL = "http://localhost:3000/todos";
+const BASE_URL = "http://localhost:3000/todos"
 
 const form = document.querySelector(".todo__form");
 const container = document.querySelector(".list");

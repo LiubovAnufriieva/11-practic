@@ -3,7 +3,7 @@
     {
       "title": "Помити посуд",
       "id": "2",
-      "completed": false
+      "completed": true
     },
     {
       "title": "Винести сміття",
@@ -13,6 +13,21 @@
     {
       "id": "8199",
       "title": "Купити шоколад",
+      "completed": false
+    },
+    {
+      "id": "4c6a",
+      "title": "Купити хліб",
+      "completed": false
+    },
+    {
+      "id": "c4d8",
+      "title": "Зайти в аптеку",
+      "completed": false
+    },
+    {
+      "id": "4a11",
+      "title": "Прання",
       "completed": false
     }
   ]
