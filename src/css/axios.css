@@ -1,0 +1,159 @@
+/* Reset styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  gap: 24px;
+}
+
+.search-input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+
+  padding: 8px 16px;
+  min-width: 272px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  transition: border-color 250ms ease-in-out;
+}
+
+.search-input:hover,
+.search-input:focus {
+  border-color: #000000;
+}
+
+.search-btn {
+  padding: 8px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+
+  color: #ffffff;
+  background-color: #4e75ff;
+
+  transition: background-color 250ms ease-in-out;
+}
+
+.search-btn:hover,
+.search-btn:focus {
+  background-color: #6c8cff;
+}
+
+.cards {
+  margin: 0 auto;
+  max-width: 1128px;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.card-item {
+  flex-basis: calc((100% - 2 * 24px) / 3);
+  outline: 1px solid black;
+}
+
+.card-item img {
+  min-width: 100%;
+  max-height: 200px;
+
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  text-align: center;
+}
+
+.card-info p {
+  font-weight: normal;
+}
+.loader.is-hidden {
+  display: none;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 120px;
+  height: 22px;
+  border-radius: 40px;
+  color: #514b82;
+  border: 2px solid;
+  position: relative;
+  overflow: hidden;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  width: 14px;
+  top: 0;
+  bottom: 0;
+  left: -20px;
+  border-radius: inherit;
+  background: currentColor;
+  box-shadow: -10px 0 12px 3px currentColor;
+  clip-path: polygon(0 5%, 100% 0,100% 100%,0 95%,-30px 50%);
+  animation: l14 1s infinite linear;
+}
+@keyframes l14 {
+  100% {left: calc(100% + 20px)}
+}
+
+.search-btn.is-hidden {
+  display: none;
+}

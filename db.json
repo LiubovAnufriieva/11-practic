@@ -3,16 +3,6 @@
     {
       "title": "Помити посуд",
       "id": "2",
-      "completed": true
-    },
-    {
-      "title": "Винести сміття",
-      "id": "3",
-      "completed": false
-    },
-    {
-      "id": "8199",
-      "title": "Купити шоколад",
       "completed": false
     },
     {
@@ -26,8 +16,33 @@
       "completed": false
     },
     {
-      "id": "4a11",
-      "title": "Прання",
+      "id": "b9e9",
+      "title": "Приготувати обід",
+      "completed": false
+    },
+    {
+      "id": "8be5",
+      "title": "Приготувати обід",
+      "completed": false
+    },
+    {
+      "id": "8d59",
+      "title": "манікюр",
+      "completed": false
+    },
+    {
+      "id": "ca7d",
+      "title": "купити квитки",
+      "completed": false
+    },
+    {
+      "id": "5abc",
+      "title": "запланувати brunch",
+      "completed": false
+    },
+    {
+      "id": "383a",
+      "title": "booking hotel",
       "completed": false
     }
   ]

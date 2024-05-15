@@ -12,7 +12,7 @@ const elements = {
 elements.addField.addEventListener('click', handlerAddField);
 elements.form.addEventListener('submit', handleSubmit);
 
-function handlerAddField() { 
+function handlerAddField() {
   elements.formContainer.insertAdjacentHTML(
     'beforeend',
     '<input type="text" class="input-country" name="country" />'
@@ -26,7 +26,7 @@ async function handleSubmit(event) {
     .getAll('country')
     .map(item => item.trim())
     .filter(item => item)
-	.filter((item,idx,arr) => arr.indexOf(item) === idx);
+    .filter((item, idx, arr) => arr.indexOf(item) === idx);
 
   try {
     const capitals = await servicesCountry(countries);
@@ -77,20 +77,22 @@ async function serviceWeather(capitals) {
   });
 
   const data = await Promise.allSettled(responses);
-  
+
   return data
-    .filter(({ status }) => status === 'fulfilled').map(
+    .filter(({ status }) => status === 'fulfilled')
+    .map(
       ({
-       value: {
-		current: {
-			condition: { text, icon },
-			temp_c,
-		  },
-		  location: { name, country },
-	   },
+        value: {
+          current: {
+            condition: { text, icon },
+            temp_c,
+          },
+          location: { name, country },
+        },
       }) => {
         return { text, icon, temp_c, name, country };
-      });
+      }
+    );
 }
 
 function createMarkup(arr) {

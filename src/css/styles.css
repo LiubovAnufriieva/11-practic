@@ -20,24 +20,24 @@ h1 {
   margin: 0;
 }
 
-.list__item {
+.list-item {
   display: flex;
   width: 300px;
   margin: 10px 0;
 }
 
-.list__title {
+.list-title {
   margin: 0;
   margin-left: 15px;
   flex: 1 0 auto;
 } 
 
-.list__checkbox {
+.list-checkbox {
   width: 25px;
   height: 25px;
 }
 
-.list__btn {
+.list-btn {
   cursor: pointer;
   background-color: #0056b3;
   border: none;
@@ -47,11 +47,11 @@ h1 {
   border-radius: 5px;
 }
 
-.todo__form {
+.todo-form {
   width: 300px;
 }
 
-.todo__form input {
+.todo-form input {
   width: 100%;
 }
 

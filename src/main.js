@@ -2,7 +2,7 @@ import "./css/styles.css"
 
 const BASE_URL = "http://localhost:3000/todos"
 
-const form = document.querySelector(".todo__form");
+const form = document.querySelector(".todo-form");
 const container = document.querySelector(".list");
 
 form.addEventListener("submit", handleSubmit);
@@ -24,10 +24,10 @@ fetchData(BASE_URL)
 
 function createMarkup(arr) {
     return arr.map(({ id, title, completed }) => `
-        <li data-id="${id}" class="list__item">
-            <input type="checkbox" class="list__checkbox" ${completed && "checked"}>
-            <h2 class="list__title">${title}</h2>
-            <button class="list__btn">x</button>
+        <li data-id="${id}" class="list-item">
+            <input type="checkbox" class="list-checkbox" ${completed && "checked"}>
+            <h2 class="list-title">${title}</h2>
+            <button class="list-btn">x</button>
         </li>
     `).join("")
 }
@@ -51,12 +51,12 @@ function handleSubmit(event) {
 }
 
 function handleUpdate(event) {
-    if(!event.target.classList.contains("list__checkbox")) {
+    if(!event.target.classList.contains("list-checkbox")) {
         return;
     }
     event.preventDefault();
     
-    const parent = event.target.closest(".list__item");
+    const parent = event.target.closest(".list-item");
     const id = parent.dataset.id;
     
     fetchData(`${BASE_URL}/${id}`, {
@@ -69,11 +69,11 @@ function handleUpdate(event) {
 
 
 function handleDelete(event) {
-    if(!event.target.classList.contains("list__btn")) {
+    if(!event.target.classList.contains("list-btn")) {
         return;
     }
     
-    const parent = event.target.closest(".list__item");
+    const parent = event.target.closest(".list-item");
     const id = parent.dataset.id;
     
     fetchData(`${BASE_URL}/${id}`, {
