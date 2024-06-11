@@ -1,0 +1,115 @@
+import axios from 'axios';
+// import "./css/styles.css"
+
+// const fetchUsers = async () => {
+// 	const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+
+
+    
+// 	return response.data;
+
+
+    
+// };
+
+// fetchUsers()
+// 	.then(users => console.log(users));
+
+//     console.log("Before try...catch");
+
+//     try {
+//         const result = 10 / 0;
+//         console.log(result); // Цей рядок не виконається через помилку
+//       } catch (error) {
+//         // Обробимо помилку
+//         console.error(error.message);
+//       }
+      
+//       console.log("After try...catch");
+
+
+      import "./css/styles.css"
+
+const BASE_URL = "http://localhost:3000/todos"
+
+const form = document.querySelector(".todo-form");
+const container = document.querySelector(".list");
+
+form.addEventListener("submit", handleSubmit);
+container.addEventListener("click", handleUpdate);
+container.addEventListener("click", handleDelete);
+
+
+async function fetchData(url, options = {}) {
+    const response = await fetch(url, options);
+    if(!response.ok) {
+        throw new Error(response.statusText);
+    }
+    return await response.json();
+}
+
+fetchData(BASE_URL)
+    .then(todos => container.insertAdjacentHTML("beforeend", createMarkup(todos)))
+    .catch(error => console.log(error))
+
+function createMarkup(arr) {
+    return arr.map(({ id, title, completed }) => `
+        <li data-id="${id}" class="list-item">
+            <input type="checkbox" class="list-checkbox" ${completed && "checked"}>
+            <h2 class="list-title">${title}</h2>
+            <button class="list-btn">x</button>
+        </li>
+    `).join("")
+}
+
+
+function handleSubmit(event) {
+    event.preventDefault();
+
+    const { todo } = event.currentTarget.elements;
+    
+    fetchData(BASE_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ title: todo.value, completed: false })
+    })
+        .then(data => container.insertAdjacentHTML("beforeend", createMarkup([data])))
+        .catch(error => alert(error))
+        .finally(() => form.reset())
+}
+
+function handleUpdate(event) {
+    if(!event.target.classList.contains("list-checkbox")) {
+        return;
+    }
+    event.preventDefault();
+    
+    const parent = event.target.closest(".list-item");
+    const id = parent.dataset.id;
+    
+    fetchData(`${BASE_URL}/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify({ completed: event.target.checked })
+    })
+        .then(data => event.target.checked = data.completed)
+        .catch(error => console.log(error))
+}
+
+
+function handleDelete(event) {
+    if(!event.target.classList.contains("list-btn")) {
+        return;
+    }
+    
+    const parent = event.target.closest(".list-item");
+    const id = parent.dataset.id;
+    
+    fetchData(`${BASE_URL}/${id}`, {
+        method: "DELETE"
+    })
+        .then(data => parent.remove())
+        .catch(error => alert(error))
+
+}

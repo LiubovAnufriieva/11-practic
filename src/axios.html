@@ -17,16 +17,21 @@
 </head>
 
 <body>
-    <form class="search-form">
-        <input class="search-input" type="search" name="search"
-          placeholder="Search images..."/>
-          <button class="search-btn" type="submit">Search</button>
-      </form>
-      <div class="cards">
-        <span class="loader is-hidden"></span>
-        <ul class="card-list"></ul>
-      </div>
-      <button class="search-btn is-hidden" id="load-more-btn" type="button">Load more..</button>
+  <section>
+    <div class="link-main-div">
+      <a class="link-main" href="./index.html">Go to home</a>
+    </div>
+      <form class="search-form">
+          <input class="search-input" type="search" name="search"
+            placeholder="Search images..."/>
+            <button class="search-btn" type="submit">Search</button>
+        </form>
+        <div class="cards">
+          <span class="loader is-hidden"></span>
+          <ul class="card-list"></ul>
+        </div>
+        <button class="search-btn is-hidden" id="load-more-btn" type="button">Load more..</button>
+  </section>
 
   <script type="module" src="./axios.js"></script>
 </body>

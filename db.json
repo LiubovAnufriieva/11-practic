@@ -8,7 +8,7 @@
     {
       "id": "4c6a",
       "title": "Купити хліб",
-      "completed": false
+      "completed": true
     },
     {
       "id": "c4d8",
@@ -18,7 +18,7 @@
     {
       "id": "b9e9",
       "title": "Приготувати обід",
-      "completed": false
+      "completed": true
     },
     {
       "id": "8be5",
@@ -28,7 +28,7 @@
     {
       "id": "8d59",
       "title": "манікюр",
-      "completed": false
+      "completed": true
     },
     {
       "id": "ca7d",
@@ -38,12 +38,12 @@
     {
       "id": "5abc",
       "title": "запланувати brunch",
-      "completed": false
+      "completed": true
     },
     {
       "id": "383a",
       "title": "booking hotel",
-      "completed": false
+      "completed": true
     }
   ]
 }

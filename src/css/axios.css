@@ -43,6 +43,11 @@ body {
   gap: 32px;
 }
 
+section {
+  padding-top: 50px;
+}
+
+
 .search-form {
   display: flex;
   justify-content: center;
