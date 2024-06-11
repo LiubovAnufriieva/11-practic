@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -11,37 +11,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
 
-  <title>TODOS</title>
+  <title>AXIOS</title>
   
-
-  <script type="module" crossorigin src="/TODOS/commonHelpers.js"></script>
+  <link rel="stylesheet" href="./css/capitals-weather.css" />
+  <script type="module" crossorigin src="/TODOS/commonHelpers3.js"></script>
   <link rel="modulepreload" crossorigin href="/TODOS/assets/modulepreload-polyfill-3cfb730f.js">
-  <link rel="modulepreload" crossorigin href="/TODOS/assets/vendor-09d7c26e.js">
-  <link rel="stylesheet" href="/TODOS/assets/vendor-1cd1f9d9.css">
   <link rel="stylesheet" href="/TODOS/assets/styles-60cd51c5.css">
 </head>
 
 <body>
-
   <section>
     <div class="link-main-div">
       <a class="link-main" href="./index.html">Go to home</a>
     </div>
     <div id="app">
-      <div class="wrapper">
-        <h1>Справи</h1>
-        <br />
-        <form class="todo-form">
-          <input type="text" name="todo" placeholder="Додати справу">
+      <h1 hidden>CAPITALS WEATHER</h1>
+      <br />
+      <div class="form-wrapper">
+        <form action="submit" class="js-search">
+          <div class="js-form-container">
+            <input type="text" class="input-country" name="country" placeholder="Додати країну" />
+          </div>
+          <button class="search-btn">SEARCH</button>
         </form>
-        <ul class="list"></ul>
+        <button class="js-add">ADD COUNTRY</button>
+        <ul class="js-list">
+    
+        </ul>
       </div>
     </div>
   </section>
-
-
   
-</body>
 
+</body>
 
 </html>
