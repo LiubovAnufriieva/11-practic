@@ -2,14 +2,12 @@ import axios from 'axios';
 import "./css/styles.css"
 
 const BASE_URL = "http://localhost:3000/todos"
-
 const form = document.querySelector(".todo-form");
 const container = document.querySelector(".list");
 
 form.addEventListener("submit", handleSubmit);
 container.addEventListener("click", handleUpdate);
 container.addEventListener("click", handleDelete);
-
 
 async function fetchData(url, options = {}) {
     const response = await fetch(url, options);
@@ -33,10 +31,8 @@ function createMarkup(arr) {
     `).join("")
 }
 
-
 function handleSubmit(event) {
     event.preventDefault();
-
     const { todo } = event.currentTarget.elements;
     
     fetchData(BASE_URL, {
@@ -56,7 +52,6 @@ function handleUpdate(event) {
         return;
     }
     event.preventDefault();
-    
     const parent = event.target.closest(".list-item");
     const id = parent.dataset.id;
     
@@ -67,7 +62,6 @@ function handleUpdate(event) {
         .then(data => event.target.checked = data.completed)
         .catch(error => console.log(error))
 }
-
 
 function handleDelete(event) {
     if(!event.target.classList.contains("list-btn")) {

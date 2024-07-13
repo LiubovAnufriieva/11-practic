@@ -22,6 +22,7 @@
     "flatpickr": "^4.6.13",
     "izitoast": "^1.4.0",
     "json-server": "^1.0.0-alpha.23",
+    "nanoid": "^5.0.7",
     "simplelightbox": "^2.14.3",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
